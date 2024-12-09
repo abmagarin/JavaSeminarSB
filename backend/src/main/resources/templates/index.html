@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Record Menu</title>
+    <!-- Include Bootstrap CSS for a clean and responsive design -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional custom styles -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/logo.png}" alt="Logo" width="40" height="40">
+            Class Records
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-5">
+    <header class="text-center mb-4">
+        <h1 class="display-4">Welcome to the Academy</h1>
+        <p class="lead">Explore our features and offerings below</p>
+    </header>
+
+    <section>
+        <h3 class="mb-3">What will you find in the Academy?</h3>
+        <ul class="list-group">
+            <li class="list-group-item" th:each="item : ${features}" th:text="${item}">Sample Feature</li>
+        </ul>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-4 mt-5 shadow-sm">
+    <p class="mb-0">&copy; 2024 Academy Inc. All Rights Reserved.</p>
+    <small class="text-muted" th:text="Footer">Footer</small>
+</footer>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
